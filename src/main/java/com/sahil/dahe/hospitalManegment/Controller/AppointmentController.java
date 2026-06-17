@@ -12,7 +12,7 @@ public class AppointmentController {
 
     private final AppointmentService appointmentService;
 
-    // ✅ Create Appointment (must have patient + doctor)
+    // Create Appointment (must have patient + doctor)
     @PostMapping("/patient/{patientId}/doctor/{doctorId}")
     public Appointment createAppointment(
             @RequestBody Appointment appointment,
@@ -22,7 +22,7 @@ public class AppointmentController {
         return appointmentService.createNewAppointment(appointment, doctorId, patientId);
     }
 
-    // ✅ Change Doctor (Reassign appointment)
+    //  Change Doctor (Reassign appointment)
     @PutMapping("/{appointmentId}/doctor/{doctorId}")
     public Appointment updateDoctor(
             @PathVariable Long appointmentId,

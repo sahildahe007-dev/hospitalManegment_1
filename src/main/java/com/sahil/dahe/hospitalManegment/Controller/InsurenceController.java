@@ -13,7 +13,7 @@ public class InsurenceController {
 
     private final InsurenceService insurenceService;
 
-    // ✅ Assign Insurance to Patient
+    // Assign Insurance to Patient
     @PostMapping("/patient/{patientId}")
     public Patient assignInsurance(
             @RequestBody Insurence insurence,
@@ -22,7 +22,7 @@ public class InsurenceController {
         return insurenceService.assignInsurenceToPatient(insurence, patientId);
     }
 
-    // ✅ Remove Insurance
+    //  Remove Insurance
     @DeleteMapping("/patient/{patientId}")
     public Patient removeInsurance(@PathVariable Long patientId){
         return insurenceService.disaccocidateInsurencefromPatient(patientId);

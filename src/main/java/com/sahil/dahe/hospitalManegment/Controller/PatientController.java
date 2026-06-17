@@ -16,25 +16,25 @@ public class PatientController {
     private final PatientRepository patientRepository;
     private final PatientService patientService;
 
-    // ✅ Create Patient
+    //  Create Patient
     @PostMapping
     public Patient createPatient(@RequestBody Patient patient){
         return patientRepository.save(patient);
     }
 
-    // ✅ Get All Patients (with appointments)
+    //  Get All Patients (with appointments)
     @GetMapping
     public List<Patient> getAllPatients(){
         return patientRepository.findByAllPatientWithAppointment();
     }
 
-    // ✅ Get Patient by ID
+    //  Get Patient by ID
     @GetMapping("/{id}")
     public Patient getPatientById(@PathVariable Long id){
         return patientService.getpatientById(id);
     }
 
-    // ✅ Delete Patient
+    // Delete Patient
     @DeleteMapping("/{id}")
     public String deletePatient(@PathVariable Long id){
         patientRepository.deleteById(id);
